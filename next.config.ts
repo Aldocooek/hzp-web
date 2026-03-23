@@ -4,8 +4,9 @@ import path from "path";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
-  // Required for embedded Sanity Studio
-  transpilePackages: ["sanity", "next-sanity"],
+  // Sanity studio packages use ESM with useEffectEvent not available in react-server.
+  // Mark all sanity-related packages as external on the server to prevent bundling.
+  serverExternalPackages: ["sanity", "@sanity/vision", "next-sanity"],
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },

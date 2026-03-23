@@ -5,13 +5,16 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface FooterProps {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  settings?: any;
 }
 
-export default function Footer({ lang, dict }: FooterProps) {
+export default function Footer({ lang, dict, settings }: FooterProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-5%" });
 
@@ -56,7 +59,7 @@ export default function Footer({ lang, dict }: FooterProps) {
               </div>
             </Link>
             <p className="text-[#c2c2c2] text-sm leading-relaxed mb-4">
-              {dict.footer.tagline}
+              {settings?.footer?.tagline ? l(settings.footer.tagline, lang) : dict.footer.tagline}
             </p>
             <p className="text-[#c2c2c2]/60 text-xs">
               {lang === "cs" ? "Dolní 3137/100" : "Dolní 3137/100"}<br />

@@ -5,13 +5,20 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface Props {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityPage?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityBenefits?: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityJobs?: any[];
 }
 
-export default function CareerPage({ lang, dict }: Props) {
+export default function CareerPage({ lang, dict, sanityPage, sanityBenefits, sanityJobs }: Props) {
   const benefitsRef = useRef<HTMLElement>(null);
   const benefitsInView = useInView(benefitsRef as React.RefObject<Element>, { once: true, margin: "-10%" });
 
@@ -47,6 +54,31 @@ export default function CareerPage({ lang, dict }: Props) {
       <path d="M7.8 7.8l2.8 2.8M21.4 21.4l2.8 2.8M7.8 24.2l2.8-2.8M21.4 10.6l2.8-2.8"/>
     </svg>,
   ];
+
+  // Resolve page-level content
+  const careerData = sanityPage?.career;
+  const pageTitle = careerData?.title ? l(careerData.title, lang) : dict.career.title;
+  const pageSubtitle = careerData?.subtitle ? l(careerData.subtitle, lang) : dict.career.subtitle;
+  const intro = careerData?.intro ? l(careerData.intro, lang) : dict.career.intro;
+  const whyTitle = careerData?.whyTitle ? l(careerData.whyTitle, lang) : dict.career.whyTitle;
+  const openPositions = careerData?.openPositions ? l(careerData.openPositions, lang) : dict.career.openPositions;
+  const noPositions = careerData?.noPositions ? l(careerData.noPositions, lang) : dict.career.noPositions;
+  const contactHR = careerData?.contactHR ? l(careerData.contactHR, lang) : dict.career.contactHR;
+  const hrPerson = careerData?.hrPerson || dict.career.hrPerson;
+  const hrPhone = careerData?.hrPhone || dict.career.hrPhone;
+  const hrEmail = careerData?.hrEmail || dict.career.hrEmail;
+  const sendCV = careerData?.sendCV ? l(careerData.sendCV, lang) : dict.career.sendCV;
+
+  // Benefits — prefer Sanity, fall back to dict
+  const benefits = sanityBenefits && sanityBenefits.length > 0
+    ? sanityBenefits.map((b: any) => ({
+        title: l(b.title, lang),
+        desc: l(b.description, lang),
+      }))
+    : dict.career.benefits;
+
+  // Jobs — from Sanity (may be empty)
+  const jobs = sanityJobs || [];
 
   return (
     <main>
@@ -106,7 +138,7 @@ export default function CareerPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.career.title}
+              {pageTitle}
             </motion.h1>
           </div>
 
@@ -116,7 +148,7 @@ export default function CareerPage({ lang, dict }: Props) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="text-[#c2c2c2] text-lg max-w-xl"
           >
-            {dict.career.subtitle}
+            {pageSubtitle}
           </motion.p>
         </div>
       </section>
@@ -134,7 +166,7 @@ export default function CareerPage({ lang, dict }: Props) {
                   letterSpacing: "-0.01em",
                 }}
               >
-                {dict.career.intro}
+                {intro}
               </p>
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
@@ -186,12 +218,12 @@ export default function CareerPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.career.whyTitle}
+              {whyTitle}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {dict.career.benefits.map((benefit, i) => (
+            {benefits.map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 40 }}
@@ -205,7 +237,7 @@ export default function CareerPage({ lang, dict }: Props) {
                 style={{ transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)", transitionDuration: "400ms" }}
               >
                 <div className="text-[#e94560] mb-6">
-                  {benefitIcons[i]}
+                  {benefitIcons[i % benefitIcons.length]}
                 </div>
                 <h3
                   className="text-[#fafaf9] font-semibold text-lg mb-3"
@@ -240,15 +272,59 @@ export default function CareerPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.career.openPositions}
+              {openPositions}
             </h2>
           </div>
 
-          <div className="bg-[#0a0a0a] border border-white/5 p-10 text-center">
-            <p className="text-[#c2c2c2] text-sm leading-relaxed max-w-lg mx-auto">
-              {dict.career.noPositions}
-            </p>
-          </div>
+          {jobs.length > 0 ? (
+            <div className="flex flex-col gap-4">
+              {jobs.map((job: any, i: number) => (
+                <div
+                  key={job._id || i}
+                  className="bg-[#0a0a0a] border border-white/5 p-6 hover:border-[#e94560]/30 transition-colors duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <h3
+                        className="text-[#fafaf9] font-semibold text-lg mb-1"
+                        style={{ fontFamily: "var(--font-display)" }}
+                      >
+                        {l(job.title, lang)}
+                      </h3>
+                      {job.department && (
+                        <p className="text-[#c2c2c2]/60 text-sm">
+                          {l(job.department, lang)}
+                        </p>
+                      )}
+                      {job.location && (
+                        <p className="text-[#c2c2c2]/60 text-xs mt-1">
+                          {l(job.location, lang)}
+                        </p>
+                      )}
+                    </div>
+                    <a
+                      href={`mailto:${hrEmail}`}
+                      className="inline-flex items-center gap-2 bg-[#e94560] text-[#fafaf9] px-5 py-3 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#c73651] whitespace-nowrap self-start sm:self-auto"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {sendCV} →
+                    </a>
+                  </div>
+                  {job.description && (
+                    <p className="text-[#c2c2c2] text-sm leading-relaxed mt-4">
+                      {l(job.description, lang)}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-[#0a0a0a] border border-white/5 p-10 text-center">
+              <p className="text-[#c2c2c2] text-sm leading-relaxed max-w-lg mx-auto">
+                {noPositions}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -275,25 +351,25 @@ export default function CareerPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.career.contactHR}
+              {contactHR}
             </h2>
             <p className="text-[#fafaf9]/70 text-base mb-8">
-              {dict.career.hrPerson}
+              {hrPerson}
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <a
-                href={`tel:${dict.career.hrPhone.replace(/\s/g, "")}`}
+                href={`tel:${hrPhone.replace(/\s/g, "")}`}
                 className="inline-flex items-center gap-3 bg-[#fafaf9] text-[#e94560] px-7 py-4 font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#0a0a0a] hover:text-[#fafaf9]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                {dict.career.hrPhone}
+                {hrPhone}
               </a>
               <a
-                href={`mailto:${dict.career.hrEmail}`}
+                href={`mailto:${hrEmail}`}
                 className="inline-flex items-center gap-3 border-2 border-[#fafaf9]/40 text-[#fafaf9] px-7 py-4 font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:border-[#fafaf9] hover:bg-[#fafaf9]/10"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                {dict.career.sendCV}
+                {sendCV}
               </a>
             </div>
           </motion.div>

@@ -4,10 +4,13 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface IndustrySectionProps {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityIndustries?: any[];
 }
 
 const industryIcons = {
@@ -42,30 +45,54 @@ const industryIcons = {
   ),
 };
 
-export default function IndustrySection({ lang, dict }: IndustrySectionProps) {
+// Fallback icon for any industry not matching the keys above
+const defaultIcon = (
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+    <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" strokeWidth="1.5"/>
+    <path d="M20 32 H44 M32 20 V44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+// Map Sanity industry icon keys to SVG elements
+const iconMap: Record<string, React.ReactElement> = {
+  automotive: industryIcons.automotive,
+  railway: industryIcons.railway,
+  industrial: industryIcons.industrial,
+};
+
+export default function IndustrySection({ lang, dict, sanityIndustries }: IndustrySectionProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-10%" });
 
-  const industries = [
-    {
-      key: "automotive",
-      name: dict.industries.automotive.name,
-      desc: dict.industries.automotive.desc,
-      icon: industryIcons.automotive,
-    },
-    {
-      key: "railway",
-      name: dict.industries.railway.name,
-      desc: dict.industries.railway.desc,
-      icon: industryIcons.railway,
-    },
-    {
-      key: "industrial",
-      name: dict.industries.industrial.name,
-      desc: dict.industries.industrial.desc,
-      icon: industryIcons.industrial,
-    },
-  ];
+  // Build industry list — prefer Sanity data, fall back to dict
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const industries = sanityIndustries && sanityIndustries.length > 0
+    ? sanityIndustries.map((ind: any) => ({
+        key: ind.icon || ind._id,
+        name: l(ind.name, lang),
+        desc: l(ind.description, lang),
+        icon: iconMap[ind.icon] || defaultIcon,
+      }))
+    : [
+        {
+          key: "automotive",
+          name: dict.industries.automotive.name,
+          desc: dict.industries.automotive.desc,
+          icon: industryIcons.automotive,
+        },
+        {
+          key: "railway",
+          name: dict.industries.railway.name,
+          desc: dict.industries.railway.desc,
+          icon: industryIcons.railway,
+        },
+        {
+          key: "industrial",
+          name: dict.industries.industrial.name,
+          desc: dict.industries.industrial.desc,
+          icon: industryIcons.industrial,
+        },
+      ];
 
   return (
     <section ref={ref} className="bg-[#f5f5f0] py-28 lg:py-40">

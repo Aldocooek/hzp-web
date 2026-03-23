@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { isValidLocale, type Locale } from "@/lib/locale";
 import { getDictionary } from "@/lib/getDictionary";
+import { getHomePageData } from "@/sanity/queries";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import ProductsSection from "./ProductsSection";
@@ -31,6 +32,7 @@ export default async function HomePage({
   const { lang: rawLang } = await params;
   const lang: Locale = isValidLocale(rawLang) ? rawLang : "cs";
   const dict = await getDictionary(lang);
+  const { settings, products, industries } = await getHomePageData();
 
   return (
     <>
@@ -67,11 +69,11 @@ export default async function HomePage({
         }}
       />
 
-      <Hero lang={lang} dict={dict} />
-      <Stats dict={dict} />
-      <ProductsSection lang={lang} dict={dict} />
-      <IndustrySection lang={lang} dict={dict} />
-      <AboutPreview lang={lang} dict={dict} />
+      <Hero lang={lang} dict={dict} settings={settings} />
+      <Stats dict={dict} settings={settings} />
+      <ProductsSection lang={lang} dict={dict} sanityProducts={products} />
+      <IndustrySection lang={lang} dict={dict} sanityIndustries={industries} />
+      <AboutPreview lang={lang} dict={dict} settings={settings} />
       <CtaBanner lang={lang} dict={dict} />
     </>
   );

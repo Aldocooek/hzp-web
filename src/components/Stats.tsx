@@ -3,9 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
+import type { Locale } from "@/middleware";
 
 interface StatsProps {
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  settings?: any;
+  lang?: Locale;
 }
 
 function AnimatedCounter({
@@ -56,34 +61,32 @@ function AnimatedCounter({
   );
 }
 
-export default function Stats({ dict }: StatsProps) {
+export default function Stats({ dict, settings, lang = "cs" }: StatsProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-10%" });
 
+  const statsData = settings?.stats;
+
   const stats = [
     {
-      value: 1951,
-      suffix: "",
-      label: dict.stats.founded,
-      description: dict.stats.foundedVal,
+      value: statsData?.founded?.numericValue ?? 1951,
+      suffix: statsData?.founded?.suffix ?? "",
+      label: statsData?.founded?.label ? l(statsData.founded.label, lang) : dict.stats.founded,
     },
     {
-      value: 572945,
-      suffix: "",
-      label: dict.stats.springs,
-      description: dict.stats.springsVal,
+      value: statsData?.springs?.numericValue ?? 572945,
+      suffix: statsData?.springs?.suffix ?? "",
+      label: statsData?.springs?.label ? l(statsData.springs.label, lang) : dict.stats.springs,
     },
     {
-      value: 280,
-      suffix: "",
-      label: dict.stats.employees,
-      description: dict.stats.employeesVal,
+      value: statsData?.employees?.numericValue ?? 280,
+      suffix: statsData?.employees?.suffix ?? "",
+      label: statsData?.employees?.label ? l(statsData.employees.label, lang) : dict.stats.employees,
     },
     {
-      value: 65,
-      suffix: "+",
-      label: dict.stats.years,
-      description: dict.stats.yearsVal,
+      value: statsData?.years?.numericValue ?? 65,
+      suffix: statsData?.years?.suffix ?? "+",
+      label: statsData?.years?.label ? l(statsData.years.label, lang) : dict.stats.years,
     },
   ];
 

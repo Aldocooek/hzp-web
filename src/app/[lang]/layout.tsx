@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { locales } from "@/middleware";
 import { isValidLocale, type Locale } from "@/lib/locale";
 import { getDictionary } from "@/lib/getDictionary";
+import { getSiteSettings } from "@/sanity/queries";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -67,7 +68,10 @@ export default async function LangLayout({
 }) {
   const { lang: rawLang } = await params;
   const lang: Locale = isValidLocale(rawLang) ? rawLang : "cs";
-  const dict = await getDictionary(lang);
+  const [dict, settings] = await Promise.all([
+    getDictionary(lang),
+    getSiteSettings(),
+  ]);
 
   return (
     <>
@@ -81,7 +85,7 @@ export default async function LangLayout({
         <div className="noise-overlay">
           <Header lang={lang} dict={dict} />
           {children}
-          <Footer lang={lang} dict={dict} />
+          <Footer lang={lang} dict={dict} settings={settings} />
         </div>
       </SmoothScroll>
     </>

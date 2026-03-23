@@ -4,13 +4,20 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface Props {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityPage?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityValues?: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityTeam?: any[];
 }
 
-export default function AboutPage({ lang, dict }: Props) {
+export default function AboutPage({ lang, dict, sanityPage, sanityValues, sanityTeam }: Props) {
   const valuesRef = useRef<HTMLElement>(null);
   const valuesInView = useInView(valuesRef as React.RefObject<Element>, { once: true, margin: "-10%" });
 
@@ -19,6 +26,35 @@ export default function AboutPage({ lang, dict }: Props) {
 
   const visionRef = useRef<HTMLElement>(null);
   const visionInView = useInView(visionRef as React.RefObject<Element>, { once: true, margin: "-10%" });
+
+  // Resolve page-level content
+  const aboutData = sanityPage?.about;
+  const pageTitle = aboutData?.title ? l(aboutData.title, lang) : dict.about.title;
+  const pageSubtitle = aboutData?.subtitle ? l(aboutData.subtitle, lang) : dict.about.subtitle;
+  const mission = aboutData?.mission ? l(aboutData.mission, lang) : dict.about.mission;
+  const historyTitle = aboutData?.historyTitle ? l(aboutData.historyTitle, lang) : dict.about.historyTitle;
+  const historyText = aboutData?.historyText ? l(aboutData.historyText, lang) : dict.about.historyText;
+  const history2 = aboutData?.history2 ? l(aboutData.history2, lang) : dict.about.history2;
+  const visionTitle = aboutData?.visionTitle ? l(aboutData.visionTitle, lang) : dict.about.visionTitle;
+  const visionText = aboutData?.visionText ? l(aboutData.visionText, lang) : dict.about.visionText;
+  const valuesTitle = aboutData?.valuesTitle ? l(aboutData.valuesTitle, lang) : dict.about.valuesTitle;
+  const managementTitle = aboutData?.managementTitle ? l(aboutData.managementTitle, lang) : dict.about.managementTitle;
+
+  // Values list — prefer Sanity, fall back to dict
+  const values = sanityValues && sanityValues.length > 0
+    ? sanityValues.map((v: any) => ({
+        title: l(v.title, lang),
+        desc: l(v.description, lang),
+      }))
+    : dict.about.values;
+
+  // Management / team — prefer Sanity, fall back to dict
+  const management = sanityTeam && sanityTeam.length > 0
+    ? sanityTeam.map((m: any) => ({
+        name: m.name || '',
+        role: m.role ? l(m.role, lang) : '',
+      }))
+    : dict.about.management;
 
   return (
     <main>
@@ -65,7 +101,7 @@ export default function AboutPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.about.title}
+              {pageTitle}
             </motion.h1>
           </div>
 
@@ -75,7 +111,7 @@ export default function AboutPage({ lang, dict }: Props) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="text-[#c2c2c2] text-lg max-w-xl"
           >
-            {dict.about.subtitle}
+            {pageSubtitle}
           </motion.p>
         </div>
       </section>
@@ -110,13 +146,13 @@ export default function AboutPage({ lang, dict }: Props) {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  {dict.about.historyTitle}
+                  {historyTitle}
                 </h2>
                 <p className="text-[#c2c2c2] text-base leading-relaxed mb-4">
-                  {dict.about.historyText}
+                  {historyText}
                 </p>
                 <p className="text-[#c2c2c2] text-base leading-relaxed">
-                  {dict.about.history2}
+                  {history2}
                 </p>
               </div>
 
@@ -136,7 +172,7 @@ export default function AboutPage({ lang, dict }: Props) {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  &ldquo;{dict.about.mission}&rdquo;
+                  &ldquo;{mission}&rdquo;
                 </blockquote>
               </div>
             </div>
@@ -167,10 +203,10 @@ export default function AboutPage({ lang, dict }: Props) {
                   letterSpacing: "-0.02em",
                 }}
               >
-                {dict.about.visionTitle}
+                {visionTitle}
               </h2>
               <p className="text-[#c2c2c2] text-base leading-relaxed">
-                {dict.about.visionText}
+                {visionText}
               </p>
             </motion.div>
 
@@ -226,12 +262,12 @@ export default function AboutPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.about.valuesTitle}
+              {valuesTitle}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dict.about.values.map((value, i) => (
+            {values.map((value, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 40 }}
@@ -282,12 +318,12 @@ export default function AboutPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.about.managementTitle}
+              {managementTitle}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dict.about.management.map((person, i) => (
+            {management.map((person, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -302,7 +338,7 @@ export default function AboutPage({ lang, dict }: Props) {
                 {/* Avatar placeholder */}
                 <div className="w-12 h-12 bg-[#e94560]/10 border border-[#e94560]/20 flex items-center justify-center mb-5">
                   <span className="text-[#e94560] font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
-                    {person.name.split(" ").find(w => !w.startsWith("Ing.") && !w.endsWith("."))?.charAt(0) || "H"}
+                    {person.name.split(" ").find((w: string) => !w.startsWith("Ing.") && !w.endsWith("."))?.charAt(0) || "H"}
                   </span>
                 </div>
                 <div

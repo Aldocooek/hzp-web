@@ -5,18 +5,49 @@ import { motion, useInView } from "framer-motion";
 import ContactForm from "@/components/ContactForm";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface Props {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityPage?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanitySettings?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityDepartments?: any[];
 }
 
-export default function ContactPage({ lang, dict }: Props) {
+export default function ContactPage({ lang, dict, sanityPage, sanitySettings, sanityDepartments }: Props) {
   const deptsRef = useRef<HTMLElement>(null);
   const deptsInView = useInView(deptsRef as React.RefObject<Element>, { once: true, margin: "-10%" });
 
   const formRef = useRef<HTMLElement>(null);
   const formInView = useInView(formRef as React.RefObject<Element>, { once: true, margin: "-10%" });
+
+  // Resolve page-level content
+  const contactData = sanityPage?.contact;
+  const pageTitle = contactData?.title ? l(contactData.title, lang) : dict.contact.title;
+  const pageSubtitle = contactData?.subtitle ? l(contactData.subtitle, lang) : dict.contact.subtitle;
+  const formTitle = contactData?.formTitle ? l(contactData.formTitle, lang) : dict.contact.formTitle;
+  const departmentsTitle = contactData?.departments ? l(contactData.departments, lang) : dict.contact.departments;
+
+  // Contact info — prefer Sanity settings.contactInfo, fall back to dict
+  const contactInfo = sanitySettings?.contactInfo;
+  const addressVal = contactInfo?.address ? l(contactInfo.address, lang) : dict.contact.addressVal;
+  const phoneVal = contactInfo?.phone || dict.contact.phoneVal;
+  const emailVal = contactInfo?.email || dict.contact.emailVal;
+  const icoVal = contactInfo?.ico || dict.contact.icoVal;
+
+  // Departments — prefer Sanity, fall back to dict
+  const departments = sanityDepartments && sanityDepartments.length > 0
+    ? sanityDepartments.map((d: any) => ({
+        name: l(d.name, lang),
+        person: d.person || '',
+        phone: d.phone || '',
+        email: d.email || '',
+      }))
+    : dict.contact.depts;
 
   return (
     <main>
@@ -63,7 +94,7 @@ export default function ContactPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.contact.title}
+              {pageTitle}
             </motion.h1>
           </div>
 
@@ -73,7 +104,7 @@ export default function ContactPage({ lang, dict }: Props) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="text-[#c2c2c2] text-lg max-w-xl"
           >
-            {dict.contact.subtitle}
+            {pageSubtitle}
           </motion.p>
         </div>
       </section>
@@ -99,7 +130,7 @@ export default function ContactPage({ lang, dict }: Props) {
                 </div>
                 <p className="text-[#fafaf9] text-sm leading-relaxed">
                   HŽP a.s.<br />
-                  {dict.contact.addressVal}
+                  {addressVal}
                 </p>
               </div>
 
@@ -112,10 +143,10 @@ export default function ContactPage({ lang, dict }: Props) {
                   {dict.contact.phone}
                 </div>
                 <a
-                  href={`tel:${dict.contact.phoneVal.replace(/\s/g, "")}`}
+                  href={`tel:${phoneVal.replace(/\s/g, "")}`}
                   className="text-[#fafaf9] text-sm hover:text-[#e94560] transition-colors duration-200"
                 >
-                  {dict.contact.phoneVal}
+                  {phoneVal}
                 </a>
               </div>
 
@@ -128,10 +159,10 @@ export default function ContactPage({ lang, dict }: Props) {
                   {dict.contact.email}
                 </div>
                 <a
-                  href={`mailto:${dict.contact.emailVal}`}
+                  href={`mailto:${emailVal}`}
                   className="text-[#fafaf9] text-sm hover:text-[#e94560] transition-colors duration-200"
                 >
-                  {dict.contact.emailVal}
+                  {emailVal}
                 </a>
               </div>
 
@@ -143,7 +174,7 @@ export default function ContactPage({ lang, dict }: Props) {
                 >
                   {dict.contact.ico}
                 </div>
-                <p className="text-[#fafaf9] text-sm">{dict.contact.icoVal}</p>
+                <p className="text-[#fafaf9] text-sm">{icoVal}</p>
               </div>
 
               {/* Map placeholder */}
@@ -184,7 +215,7 @@ export default function ContactPage({ lang, dict }: Props) {
                   letterSpacing: "-0.02em",
                 }}
               >
-                {dict.contact.formTitle}
+                {formTitle}
               </h2>
               <ContactForm dict={dict} />
             </motion.div>
@@ -215,12 +246,12 @@ export default function ContactPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.contact.departments}
+              {departmentsTitle}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {dict.contact.depts.map((dept, i) => (
+            {departments.map((dept, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}

@@ -6,33 +6,43 @@ import { motion, useInView } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface ProductsSectionProps {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityProducts?: any[];
 }
 
-export default function ProductsSection({ lang, dict }: ProductsSectionProps) {
+export default function ProductsSection({ lang, dict, sanityProducts }: ProductsSectionProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-10%" });
 
-  const products = [
-    {
-      name: dict.products.helical.name,
-      desc: dict.products.helical.desc,
-      href: `/${lang}/${dict.nav.productsSlug}#helical`,
-    },
-    {
-      name: dict.products.trapezoidal.name,
-      desc: dict.products.trapezoidal.desc,
-      href: `/${lang}/${dict.nav.productsSlug}#trapezoidal`,
-    },
-    {
-      name: dict.products.parabolic.name,
-      desc: dict.products.parabolic.desc,
-      href: `/${lang}/${dict.nav.productsSlug}#parabolic`,
-    },
-  ];
+  // Build product list — prefer Sanity data, fall back to dict
+  const products = sanityProducts && sanityProducts.length > 0
+    ? sanityProducts.map((p: any, i: number) => ({
+        name: l(p.name, lang),
+        desc: l(p.description, lang),
+        href: `/${lang}/${dict.nav.productsSlug}#${p.slug?.current || p._id || i}`,
+      }))
+    : [
+        {
+          name: dict.products.helical.name,
+          desc: dict.products.helical.desc,
+          href: `/${lang}/${dict.nav.productsSlug}#helical`,
+        },
+        {
+          name: dict.products.trapezoidal.name,
+          desc: dict.products.trapezoidal.desc,
+          href: `/${lang}/${dict.nav.productsSlug}#trapezoidal`,
+        },
+        {
+          name: dict.products.parabolic.name,
+          desc: dict.products.parabolic.desc,
+          href: `/${lang}/${dict.nav.productsSlug}#parabolic`,
+        },
+      ];
 
   return (
     <section ref={ref} className="bg-[#1a1a2e] py-28 lg:py-40">

@@ -3,6 +3,12 @@ import type { Metadata } from "next";
 import { locales } from "@/middleware";
 import { isValidLocale, type Locale } from "@/lib/locale";
 import { getDictionary } from "@/lib/getDictionary";
+import {
+  getProductsPageData,
+  getAboutPageData,
+  getContactPageData,
+  getCareerPageData,
+} from "@/sanity/queries";
 import ProductsPage from "./ProductsPage";
 import AboutPage from "./AboutPage";
 import ContactPage from "./ContactPage";
@@ -231,6 +237,7 @@ export default async function SlugPage({
   const dict = await getDictionary(lang);
 
   if (slug === dict.nav.productsSlug) {
+    const { page, products } = await getProductsPageData();
     return (
       <>
         <script
@@ -239,11 +246,12 @@ export default async function SlugPage({
             __html: JSON.stringify(getProductsJsonLd(lang)),
           }}
         />
-        <ProductsPage lang={lang} dict={dict} />
+        <ProductsPage lang={lang} dict={dict} sanityPage={page} sanityProducts={products} />
       </>
     );
   }
   if (slug === dict.nav.aboutSlug) {
+    const { page, values, team } = await getAboutPageData();
     return (
       <>
         <script
@@ -252,11 +260,12 @@ export default async function SlugPage({
             __html: JSON.stringify(getAboutJsonLd(lang)),
           }}
         />
-        <AboutPage lang={lang} dict={dict} />
+        <AboutPage lang={lang} dict={dict} sanityPage={page} sanityValues={values} sanityTeam={team} />
       </>
     );
   }
   if (slug === dict.nav.contactSlug) {
+    const { page, settings, departments } = await getContactPageData();
     return (
       <>
         <script
@@ -265,11 +274,12 @@ export default async function SlugPage({
             __html: JSON.stringify(getContactJsonLd(lang)),
           }}
         />
-        <ContactPage lang={lang} dict={dict} />
+        <ContactPage lang={lang} dict={dict} sanityPage={page} sanitySettings={settings} sanityDepartments={departments} />
       </>
     );
   }
   if (slug === dict.nav.careerSlug) {
+    const { page, benefits, jobs } = await getCareerPageData();
     return (
       <>
         <script
@@ -278,7 +288,7 @@ export default async function SlugPage({
             __html: JSON.stringify(getCareerJsonLd(lang)),
           }}
         />
-        <CareerPage lang={lang} dict={dict} />
+        <CareerPage lang={lang} dict={dict} sanityPage={page} sanityBenefits={benefits} sanityJobs={jobs} />
       </>
     );
   }

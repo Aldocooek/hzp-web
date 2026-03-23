@@ -5,10 +5,15 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface Props {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityPage?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  sanityProducts?: any[];
 }
 
 function ProductDetail({
@@ -64,6 +69,8 @@ function ProductDetail({
     </svg>,
   ];
 
+  const icon = icons[index % icons.length];
+
   return (
     <div id={id} ref={ref} className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${index < 2 ? "border-b border-white/5" : ""}`}>
       {/* Visual panel */}
@@ -77,7 +84,7 @@ function ProductDetail({
           {/* Background glow */}
           <div className="absolute inset-0 bg-[#e94560]/5 rounded-full blur-3xl" />
           <div className="relative w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-300">
-            {icons[index]}
+            {icon}
           </div>
         </div>
       </motion.div>
@@ -145,32 +152,49 @@ function ProductDetail({
   );
 }
 
-export default function ProductsPage({ lang, dict }: Props) {
+export default function ProductsPage({ lang, dict, sanityPage, sanityProducts }: Props) {
   const heroRef = useRef<HTMLElement>(null);
 
-  const products = [
-    {
-      id: "helical",
-      name: dict.products.helical.name,
-      desc: dict.products.helical.desc,
-      detail: dict.products.helical.detail,
-      specs: dict.products.helical.specs,
-    },
-    {
-      id: "trapezoidal",
-      name: dict.products.trapezoidal.name,
-      desc: dict.products.trapezoidal.desc,
-      detail: dict.products.trapezoidal.detail,
-      specs: dict.products.trapezoidal.specs,
-    },
-    {
-      id: "parabolic",
-      name: dict.products.parabolic.name,
-      desc: dict.products.parabolic.desc,
-      detail: dict.products.parabolic.detail,
-      specs: dict.products.parabolic.specs,
-    },
-  ];
+  // Page title/subtitle — prefer Sanity page data, fall back to dict
+  const pageTitle = sanityPage?.title ? l(sanityPage.title, lang) : dict.products.title;
+  const pageSubtitle = sanityPage?.subtitle ? l(sanityPage.subtitle, lang) : dict.products.subtitle;
+
+  // Build products list — prefer Sanity, fall back to dict
+  const products = sanityProducts && sanityProducts.length > 0
+    ? sanityProducts.map((p: any, i: number) => ({
+        id: p.slug?.current || p._id || `product-${i}`,
+        name: l(p.name, lang),
+        desc: l(p.description, lang),
+        detail: l(p.detail, lang) || '',
+        specs: Array.isArray(p.specs)
+          ? p.specs.map((spec: any) =>
+              typeof spec === 'string' ? spec : l(spec, lang)
+            )
+          : [],
+      }))
+    : [
+        {
+          id: "helical",
+          name: dict.products.helical.name,
+          desc: dict.products.helical.desc,
+          detail: dict.products.helical.detail,
+          specs: dict.products.helical.specs,
+        },
+        {
+          id: "trapezoidal",
+          name: dict.products.trapezoidal.name,
+          desc: dict.products.trapezoidal.desc,
+          detail: dict.products.trapezoidal.detail,
+          specs: dict.products.trapezoidal.specs,
+        },
+        {
+          id: "parabolic",
+          name: dict.products.parabolic.name,
+          desc: dict.products.parabolic.desc,
+          detail: dict.products.parabolic.detail,
+          specs: dict.products.parabolic.specs,
+        },
+      ];
 
   return (
     <main>
@@ -220,7 +244,7 @@ export default function ProductsPage({ lang, dict }: Props) {
                 letterSpacing: "-0.03em",
               }}
             >
-              {dict.products.title}
+              {pageTitle}
             </motion.h1>
           </div>
 
@@ -230,7 +254,7 @@ export default function ProductsPage({ lang, dict }: Props) {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             className="text-[#c2c2c2] text-lg max-w-xl"
           >
-            {dict.products.subtitle}
+            {pageSubtitle}
           </motion.p>
         </div>
       </section>

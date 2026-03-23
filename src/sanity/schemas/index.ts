@@ -9,7 +9,7 @@ import { newsArticle } from './newsArticle';
 import { jobPosition } from './jobPosition';
 import { page } from './page';
 
-export const schemas = [
+export const schemaTypes = [
   siteSettings,
   product,
   industry,
@@ -21,3 +21,6 @@ export const schemas = [
   jobPosition,
   page,
 ];
+
+// Alias for backwards compatibility with src/sanity/config.ts
+export const schemas = schemaTypes;

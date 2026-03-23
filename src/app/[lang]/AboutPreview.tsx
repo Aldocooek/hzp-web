@@ -5,15 +5,25 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface AboutPreviewProps {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  settings?: any;
 }
 
-export default function AboutPreview({ lang, dict }: AboutPreviewProps) {
+export default function AboutPreview({ lang, dict, settings }: AboutPreviewProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-10%" });
+
+  // Resolve content — prefer Sanity settings, fall back to dict
+  const aboutData = settings?.about;
+  const mission = aboutData?.mission ? l(aboutData.mission, lang) : dict.about.mission;
+  const subtitle = aboutData?.subtitle ? l(aboutData.subtitle, lang) : dict.about.subtitle;
+  const historyText = aboutData?.historyText ? l(aboutData.historyText, lang) : dict.about.historyText;
+  const history2 = aboutData?.history2 ? l(aboutData.history2, lang) : dict.about.history2;
 
   return (
     <section ref={ref} className="bg-[#0a0a0a] py-28 lg:py-40 overflow-hidden">
@@ -56,7 +66,7 @@ export default function AboutPreview({ lang, dict }: AboutPreviewProps) {
                     letterSpacing: "-0.01em",
                   }}
                 >
-                  &ldquo;{dict.about.mission}&rdquo;
+                  &ldquo;{mission}&rdquo;
                 </blockquote>
 
                 <div className="mt-8 pt-8 border-t border-white/5 grid grid-cols-2 gap-6">
@@ -116,7 +126,7 @@ export default function AboutPreview({ lang, dict }: AboutPreviewProps) {
                   letterSpacing: "-0.03em",
                 }}
               >
-                {dict.about.subtitle}
+                {subtitle}
               </motion.h2>
             </div>
 
@@ -127,10 +137,10 @@ export default function AboutPreview({ lang, dict }: AboutPreviewProps) {
               className="flex flex-col gap-4"
             >
               <p className="text-[#c2c2c2] text-base leading-relaxed">
-                {dict.about.historyText}
+                {historyText}
               </p>
               <p className="text-[#c2c2c2] text-base leading-relaxed">
-                {dict.about.history2}
+                {history2}
               </p>
 
               <div className="mt-4">

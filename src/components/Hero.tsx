@@ -1,17 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Locale } from "@/middleware";
 import type { Dictionary } from "@/lib/getDictionary";
+import { l } from "@/sanity/helpers";
 
 interface HeroProps {
   lang: Locale;
   dict: Dictionary;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  settings?: any;
 }
 
-export default function Hero({ lang, dict }: HeroProps) {
+export default function Hero({ lang, dict, settings }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const easing = [0.16, 1, 0.3, 1] as const;
@@ -41,6 +44,37 @@ export default function Hero({ lang, dict }: HeroProps) {
       },
     }),
   };
+
+  // Resolve hero content — prefer Sanity, fall back to dict
+  const hero = settings?.hero;
+  const headline1 = hero?.headline1 ? l(hero.headline1, lang) : dict.hero.headline1;
+  const headline2 = hero?.headline2 ? l(hero.headline2, lang) : dict.hero.headline2;
+  const headline3 = hero?.headline3 ? l(hero.headline3, lang) : dict.hero.headline3;
+  const subheadline = hero?.subheadline ? l(hero.subheadline, lang) : dict.hero.subheadline;
+  const sub = hero?.sub ? l(hero.sub, lang) : dict.hero.sub;
+  const cta1 = hero?.cta1 ? l(hero.cta1, lang) : dict.hero.cta1;
+  const cta2 = hero?.cta2 ? l(hero.cta2, lang) : dict.hero.cta2;
+
+  // Stats bar
+  const statsData = settings?.stats;
+  const statsBar = [
+    {
+      val: statsData?.founded?.value ?? dict.stats.foundedVal,
+      label: statsData?.founded?.label ? l(statsData.founded.label, lang) : dict.stats.founded,
+    },
+    {
+      val: statsData?.springs?.value ?? dict.stats.springsVal,
+      label: statsData?.springs?.label ? l(statsData.springs.label, lang) : dict.stats.springs,
+    },
+    {
+      val: statsData?.employees?.value ?? dict.stats.employeesVal,
+      label: statsData?.employees?.label ? l(statsData.employees.label, lang) : dict.stats.employees,
+    },
+    {
+      val: statsData?.years?.value ?? dict.stats.yearsVal,
+      label: statsData?.years?.label ? l(statsData.years.label, lang) : dict.stats.years,
+    },
+  ];
 
   return (
     <section
@@ -110,7 +144,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                     letterSpacing: "-0.03em",
                   }}
                 >
-                  {dict.hero.headline1}
+                  {headline1}
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -125,7 +159,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                     letterSpacing: "-0.03em",
                   }}
                 >
-                  {dict.hero.headline2}
+                  {headline2}
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -141,7 +175,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                     color: "#e94560",
                   }}
                 >
-                  {dict.hero.headline3}
+                  {headline3}
                 </motion.div>
               </div>
               <div className="overflow-hidden">
@@ -156,7 +190,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                     letterSpacing: "-0.03em",
                   }}
                 >
-                  {dict.hero.subheadline}
+                  {subheadline}
                 </motion.div>
               </div>
             </h1>
@@ -172,7 +206,7 @@ export default function Hero({ lang, dict }: HeroProps) {
               className="text-[#c2c2c2] text-base leading-relaxed mb-8 max-w-sm"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              {dict.hero.sub}
+              {sub}
             </motion.p>
 
             <motion.div
@@ -187,7 +221,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                 className="group inline-flex items-center gap-3 bg-[#e94560] text-[#fafaf9] px-7 py-4 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#c73651]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                {dict.hero.cta1}
+                {cta1}
                 <motion.span
                   className="block"
                   whileHover={{ x: 4 }}
@@ -201,7 +235,7 @@ export default function Hero({ lang, dict }: HeroProps) {
                 className="inline-flex items-center gap-3 border border-[#fafaf9]/20 text-[#fafaf9] px-7 py-4 font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:border-[#fafaf9]/60 hover:bg-white/5"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                {dict.hero.cta2}
+                {cta2}
               </Link>
             </motion.div>
           </div>
@@ -215,12 +249,7 @@ export default function Hero({ lang, dict }: HeroProps) {
           variants={fadeVariants}
           className="mt-20 pt-8 border-t border-white/5 flex flex-wrap gap-12"
         >
-          {[
-            { val: dict.stats.foundedVal, label: dict.stats.founded },
-            { val: dict.stats.springsVal, label: dict.stats.springs },
-            { val: dict.stats.employeesVal, label: dict.stats.employees },
-            { val: dict.stats.yearsVal, label: dict.stats.years },
-          ].map((stat, i) => (
+          {statsBar.map((stat, i) => (
             <div key={i} className="flex items-center gap-4">
               <div>
                 <div

@@ -6,8 +6,8 @@ import { schemaTypes } from "./src/sanity/schemas";
 export default defineConfig({
   name: "hzp",
   title: "HŽP a.s.",
-  projectId: "r84dwf8q",
-  dataset: "production",
+  projectId: "1dyubvw4",
+  dataset: "hzp",
   basePath: "/studio",
   plugins: [
     structureTool({

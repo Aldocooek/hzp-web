@@ -1,0 +1,2179 @@
+[
+  {
+    "fields": [
+      {
+        "initialValue": "Site Settings",
+        "readOnly": true,
+        "name": "title",
+        "type": "string",
+        "title": "Název dokumentu"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "headline1",
+            "type": "object"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "headline2",
+            "type": "object"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "headline3",
+            "type": "object"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "subheadline",
+            "type": "object"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "sub",
+            "type": "object",
+            "title": "Sub text"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "cta1",
+            "type": "object",
+            "title": "CTA tlačítko 1"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "cta2",
+            "type": "object",
+            "title": "CTA tlačítko 2"
+          }
+        ],
+        "name": "hero",
+        "type": "object",
+        "title": "Hero sekce"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Popis (CZ)"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "Popis (EN)"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "title": "Hodnota"
+              }
+            ],
+            "name": "founded",
+            "type": "object",
+            "title": "Rok založení"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Popis (CZ)"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "Popis (EN)"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "title": "Hodnota"
+              }
+            ],
+            "name": "springs",
+            "type": "object",
+            "title": "Pružin ročně"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Popis (CZ)"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "Popis (EN)"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "title": "Hodnota"
+              }
+            ],
+            "name": "employees",
+            "type": "object",
+            "title": "Zaměstnanců"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Popis (CZ)"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "Popis (EN)"
+              },
+              {
+                "name": "value",
+                "type": "string",
+                "title": "Hodnota"
+              }
+            ],
+            "name": "years",
+            "type": "object",
+            "title": "Let zkušeností"
+          }
+        ],
+        "name": "stats",
+        "type": "object",
+        "title": "Statistiky"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "tagline",
+            "type": "object"
+          }
+        ],
+        "name": "footer",
+        "type": "object",
+        "title": "Patička"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Adresa (CZ)"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "Adresa (EN)"
+              }
+            ],
+            "name": "address",
+            "type": "object",
+            "title": "Adresa"
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "title": "Telefon"
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "title": "E-mail"
+          },
+          {
+            "name": "ico",
+            "type": "string",
+            "title": "IČO (label)"
+          },
+          {
+            "name": "icoVal",
+            "type": "string",
+            "title": "IČO (hodnota)"
+          }
+        ],
+        "name": "contactInfo",
+        "type": "object",
+        "title": "Kontaktní informace"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document",
+    "title": "Nastavení webu"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Jedinečný identifikátor: helical | trapezoidal | parabolic",
+        "name": "slug",
+        "type": "string",
+        "title": "Slug (identifikátor)"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "name",
+        "type": "object",
+        "title": "Název"
+      },
+      {
+        "fields": [
+          {
+            "rows": 3,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 3,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "description",
+        "type": "object",
+        "title": "Krátký popis"
+      },
+      {
+        "fields": [
+          {
+            "rows": 4,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 4,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "detail",
+        "type": "object",
+        "title": "Detailní popis"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "type": "object",
+            "name": "spec",
+            "title": "Parametr"
+          }
+        ],
+        "name": "specs",
+        "type": "array",
+        "title": "Technické parametry"
+      },
+      {
+        "initialValue": 0,
+        "description": "Nižší číslo = zobrazí se dříve",
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Obrázek"
+      }
+    ],
+    "name": "product",
+    "type": "document",
+    "title": "Produkt"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Jedinečný identifikátor: automotive | railway | industrial",
+        "name": "slug",
+        "type": "string",
+        "title": "Slug (identifikátor)"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "name",
+        "type": "object",
+        "title": "Název"
+      },
+      {
+        "fields": [
+          {
+            "rows": 3,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 3,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "description",
+        "type": "object",
+        "title": "Popis"
+      },
+      {
+        "description": "Název ikony použité v UI (např. automotive, railway, industrial)",
+        "name": "icon",
+        "type": "string",
+        "title": "Ikona (identifikátor)"
+      },
+      {
+        "initialValue": 0,
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      }
+    ],
+    "name": "industry",
+    "type": "document",
+    "title": "Průmyslové odvětví"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Jméno"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "role",
+        "type": "object",
+        "title": "Pozice / funkce"
+      },
+      {
+        "initialValue": 0,
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "photo",
+        "type": "image",
+        "title": "Fotografie"
+      }
+    ],
+    "name": "teamMember",
+    "type": "document",
+    "title": "Člen vedení"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "name",
+        "type": "object",
+        "title": "Název oddělení"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "person",
+        "type": "string",
+        "title": "Kontaktní osoba"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "title": "Telefon"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "E-mail"
+      },
+      {
+        "initialValue": 0,
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      }
+    ],
+    "name": "department",
+    "type": "document",
+    "title": "Oddělení (kontakt)"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "title",
+        "type": "object",
+        "title": "Název"
+      },
+      {
+        "fields": [
+          {
+            "rows": 3,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 3,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "description",
+        "type": "object",
+        "title": "Popis"
+      },
+      {
+        "initialValue": 0,
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      }
+    ],
+    "name": "benefit",
+    "type": "document",
+    "title": "Benefity (kariéra)"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "title",
+        "type": "object",
+        "title": "Název"
+      },
+      {
+        "fields": [
+          {
+            "rows": 3,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 3,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "description",
+        "type": "object",
+        "title": "Popis"
+      },
+      {
+        "initialValue": 0,
+        "name": "order",
+        "type": "number",
+        "title": "Pořadí"
+      }
+    ],
+    "name": "value",
+    "type": "document",
+    "title": "Firemní hodnoty"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "title",
+        "type": "object",
+        "title": "Titulek"
+      },
+      {
+        "options": {
+          "source": "title.cs",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug",
+        "title": "Slug (URL)"
+      },
+      {
+        "fields": [
+          {
+            "rows": 3,
+            "name": "cs",
+            "type": "text",
+            "title": "Česky"
+          },
+          {
+            "rows": 3,
+            "name": "en",
+            "type": "text",
+            "title": "English"
+          }
+        ],
+        "name": "excerpt",
+        "type": "object",
+        "title": "Perex"
+      },
+      {
+        "fields": [
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bulleted list"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered list"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/"
+                                      ],
+                                      "allowRelative": false,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "name": "href",
+                          "type": "url",
+                          "title": "URL"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h2",
+                    "title": "H2"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  },
+                  {
+                    "value": "blockquote",
+                    "title": "Quote"
+                  }
+                ],
+                "type": "block"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "type": "image"
+              }
+            ],
+            "name": "cs",
+            "type": "array",
+            "title": "Česky"
+          },
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bulleted list"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered list"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/"
+                                      ],
+                                      "allowRelative": false,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "name": "href",
+                          "type": "url",
+                          "title": "URL"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h2",
+                    "title": "H2"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  },
+                  {
+                    "value": "blockquote",
+                    "title": "Quote"
+                  }
+                ],
+                "type": "block"
+              },
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "type": "image"
+              }
+            ],
+            "name": "en",
+            "type": "array",
+            "title": "English"
+          }
+        ],
+        "name": "body",
+        "type": "object",
+        "title": "Obsah článku"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "publishedAt",
+        "type": "datetime",
+        "title": "Datum publikace"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Hlavní obrázek"
+      }
+    ],
+    "name": "newsArticle",
+    "type": "document",
+    "title": "Novinky / Aktuality"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "title",
+        "type": "object",
+        "title": "Název pozice"
+      },
+      {
+        "name": "department",
+        "type": "string",
+        "title": "Oddělení"
+      },
+      {
+        "initialValue": "Prostějov",
+        "name": "location",
+        "type": "string",
+        "title": "Místo výkonu práce"
+      },
+      {
+        "fields": [
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bullet"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "i18nTitleKey": "inputs.portable-text.annotation.link",
+                      "options": {
+                        "modal": {
+                          "type": "popover"
+                        }
+                      },
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/",
+                                        "/^tel$/",
+                                        "/^mailto$/"
+                                      ],
+                                      "allowRelative": true,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "description": "A valid web, email, phone, or relative link.",
+                          "name": "href",
+                          "type": "url",
+                          "title": "Link"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  }
+                ],
+                "type": "block"
+              }
+            ],
+            "name": "cs",
+            "type": "array",
+            "title": "Česky"
+          },
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bullet"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "i18nTitleKey": "inputs.portable-text.annotation.link",
+                      "options": {
+                        "modal": {
+                          "type": "popover"
+                        }
+                      },
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/",
+                                        "/^tel$/",
+                                        "/^mailto$/"
+                                      ],
+                                      "allowRelative": true,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "description": "A valid web, email, phone, or relative link.",
+                          "name": "href",
+                          "type": "url",
+                          "title": "Link"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  }
+                ],
+                "type": "block"
+              }
+            ],
+            "name": "en",
+            "type": "array",
+            "title": "English"
+          }
+        ],
+        "name": "description",
+        "type": "object",
+        "title": "Popis pozice"
+      },
+      {
+        "fields": [
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bullet"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "i18nTitleKey": "inputs.portable-text.annotation.link",
+                      "options": {
+                        "modal": {
+                          "type": "popover"
+                        }
+                      },
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/",
+                                        "/^tel$/",
+                                        "/^mailto$/"
+                                      ],
+                                      "allowRelative": true,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "description": "A valid web, email, phone, or relative link.",
+                          "name": "href",
+                          "type": "url",
+                          "title": "Link"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  }
+                ],
+                "type": "block"
+              }
+            ],
+            "name": "cs",
+            "type": "array",
+            "title": "Česky"
+          },
+          {
+            "of": [
+              {
+                "lists": [
+                  {
+                    "value": "bullet",
+                    "title": "Bullet"
+                  },
+                  {
+                    "value": "number",
+                    "title": "Numbered"
+                  }
+                ],
+                "marks": {
+                  "annotations": [
+                    {
+                      "i18nTitleKey": "inputs.portable-text.annotation.link",
+                      "options": {
+                        "modal": {
+                          "type": "popover"
+                        }
+                      },
+                      "fields": [
+                        {
+                          "validation": [
+                            {
+                              "level": "error",
+                              "rules": [
+                                {
+                                  "flag": "uri",
+                                  "constraint": {
+                                    "options": {
+                                      "scheme": [
+                                        "/^http$/",
+                                        "/^https$/",
+                                        "/^tel$/",
+                                        "/^mailto$/"
+                                      ],
+                                      "allowRelative": true,
+                                      "relativeOnly": false,
+                                      "allowCredentials": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "description": "A valid web, email, phone, or relative link.",
+                          "name": "href",
+                          "type": "url",
+                          "title": "Link"
+                        }
+                      ],
+                      "name": "link",
+                      "type": "object"
+                    }
+                  ],
+                  "decorators": [
+                    {
+                      "value": "strong",
+                      "title": "Strong"
+                    },
+                    {
+                      "value": "em",
+                      "title": "Emphasis"
+                    }
+                  ]
+                },
+                "of": [],
+                "styles": [
+                  {
+                    "value": "normal",
+                    "title": "Normal"
+                  },
+                  {
+                    "value": "h3",
+                    "title": "H3"
+                  }
+                ],
+                "type": "block"
+              }
+            ],
+            "name": "en",
+            "type": "array",
+            "title": "English"
+          }
+        ],
+        "name": "requirements",
+        "type": "object",
+        "title": "Požadavky"
+      },
+      {
+        "initialValue": true,
+        "description": "Zobrazit na webu",
+        "name": "isActive",
+        "type": "boolean",
+        "title": "Aktivní pozice"
+      },
+      {
+        "name": "publishedAt",
+        "type": "datetime",
+        "title": "Datum zveřejnění"
+      }
+    ],
+    "name": "jobPosition",
+    "type": "document",
+    "title": "Volná pracovní pozice"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "O nás (about)",
+              "value": "about"
+            },
+            {
+              "title": "Kariéra (career)",
+              "value": "career"
+            },
+            {
+              "title": "Produkty (products)",
+              "value": "products"
+            },
+            {
+              "title": "Kontakt (contact)",
+              "value": "contact"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "about",
+                  "career",
+                  "products",
+                  "contact"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Jedinečný identifikátor: about | career | products | contact",
+        "name": "pageId",
+        "type": "string",
+        "title": "ID stránky"
+      },
+      {
+        "fields": [
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "validation": [
+              {
+                "level": "error",
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ]
+              }
+            ],
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "title",
+        "type": "object",
+        "title": "Nadpis stránky"
+      },
+      {
+        "fields": [
+          {
+            "name": "cs",
+            "type": "string",
+            "title": "Česky"
+          },
+          {
+            "name": "en",
+            "type": "string",
+            "title": "English"
+          }
+        ],
+        "name": "subtitle",
+        "type": "object",
+        "title": "Podnadpis stránky"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "mission",
+            "type": "object",
+            "title": "Mise / poslání"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "historyTitle",
+            "type": "object",
+            "title": "Název sekce — Historie"
+          },
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "historyText",
+            "type": "object",
+            "title": "Text historie (odstavec 1)"
+          },
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "history2",
+            "type": "object",
+            "title": "Text historie (odstavec 2)"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "visionTitle",
+            "type": "object",
+            "title": "Název sekce — Vize"
+          },
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "visionText",
+            "type": "object",
+            "title": "Text vize"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "valuesTitle",
+            "type": "object",
+            "title": "Název sekce — Hodnoty"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "managementTitle",
+            "type": "object",
+            "title": "Název sekce — Vedení"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "about",
+        "type": "object",
+        "title": "O nás — obsah"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "intro",
+            "type": "object",
+            "title": "Úvodní text"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "whyTitle",
+            "type": "object",
+            "title": "Název sekce — Proč HŽP?"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "openPositions",
+            "type": "object",
+            "title": "Nadpis — Volné pozice"
+          },
+          {
+            "fields": [
+              {
+                "rows": 4,
+                "name": "cs",
+                "type": "text",
+                "title": "Česky"
+              },
+              {
+                "rows": 4,
+                "name": "en",
+                "type": "text",
+                "title": "English"
+              }
+            ],
+            "name": "noPositions",
+            "type": "object",
+            "title": "Text — žádné volné pozice"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "contactHR",
+            "type": "object",
+            "title": "Nadpis — Kontakt HR"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "sendCV",
+            "type": "object",
+            "title": "Tlačítko — Zaslat životopis"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "career",
+        "type": "object",
+        "title": "Kariéra — obsah"
+      },
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formTitle",
+            "type": "object",
+            "title": "Nadpis formuláře"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formName",
+            "type": "object",
+            "title": "Pole — Jméno"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formEmail",
+            "type": "object",
+            "title": "Pole — E-mail"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formCompany",
+            "type": "object",
+            "title": "Pole — Společnost"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formSubject",
+            "type": "object",
+            "title": "Pole — Předmět"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formMessage",
+            "type": "object",
+            "title": "Pole — Zpráva"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formSend",
+            "type": "object",
+            "title": "Tlačítko — Odeslat"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "formSuccess",
+            "type": "object",
+            "title": "Zpráva — Úspěch"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "required",
+            "type": "object",
+            "title": "Text — Povinné pole"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "departments",
+            "type": "object",
+            "title": "Nadpis — Kontakty oddělení"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "address",
+            "type": "object",
+            "title": "Label — Adresa"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "phone",
+            "type": "object",
+            "title": "Label — Telefon"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "email",
+            "type": "object",
+            "title": "Label — E-mail"
+          },
+          {
+            "fields": [
+              {
+                "name": "cs",
+                "type": "string",
+                "title": "Česky"
+              },
+              {
+                "name": "en",
+                "type": "string",
+                "title": "English"
+              }
+            ],
+            "name": "ico",
+            "type": "object",
+            "title": "Label — IČO"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "contact",
+        "type": "object",
+        "title": "Kontakt — obsah"
+      }
+    ],
+    "name": "page",
+    "type": "document",
+    "title": "Statická stránka"
+  }
+]

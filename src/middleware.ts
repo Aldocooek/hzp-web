@@ -19,6 +19,9 @@ function getLocale(request: NextRequest): Locale {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Skip middleware for Sanity Studio
+  if (pathname.startsWith('/studio')) return NextResponse.next();
+
   // Check if the pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`

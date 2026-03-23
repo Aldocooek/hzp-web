@@ -4,6 +4,8 @@ import path from "path";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
+  // Required for embedded Sanity Studio
+  transpilePackages: ["sanity", "next-sanity"],
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },

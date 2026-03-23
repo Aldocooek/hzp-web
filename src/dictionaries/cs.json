@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Domů",
+    "products": "Produkty",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "career": "Kariéra",
+    "productsSlug": "produkty",
+    "aboutSlug": "o-nas",
+    "contactSlug": "kontakty",
+    "careerSlug": "kariera"
+  },
+  "hero": {
+    "headline1": "Na našich pružinách",
+    "headline2": "spočívá bezpečí",
+    "headline3": "cestujících",
+    "subheadline": "a tíha nákladů",
+    "sub": "Přední evropský výrobce pružin pro železniční a automobilový průmysl od roku 1951",
+    "cta1": "Zobrazit produkty",
+    "cta2": "Kontaktujte nás"
+  },
+  "stats": {
+    "founded": "Rok založení",
+    "springs": "Pružin ročně",
+    "employees": "Zaměstnanců",
+    "years": "Let zkušeností",
+    "foundedVal": "1951",
+    "springsVal": "572 945",
+    "employeesVal": "280",
+    "yearsVal": "65+"
+  },
+  "products": {
+    "title": "Naše produkty",
+    "subtitle": "Precizní inženýrství pro každou aplikaci",
+    "helical": {
+      "name": "Šroubové pružiny",
+      "desc": "Vyráběné za tepla pro železniční a automobilový průmysl. Maximální přesnost a odolnost pro ty nejnáročnější aplikace.",
+      "detail": "Naše šroubové pružiny jsou vyráběny z nejkvalitnějších ocelí za přísného dodržení všech norem. Každá pružina prochází důkladnou kontrolou kvality.",
+      "specs": ["Průměr drátu 12–80 mm", "Průměr pružiny do 500 mm", "Výška do 1000 mm", "Maximální zatížení 500 kN"]
+    },
+    "trapezoidal": {
+      "name": "Listové pružiny trapézové",
+      "desc": "Tradiční konstrukční řešení pro nákladní vozidla a přívěsy. Osvědčená technologie s dlouhou životností.",
+      "detail": "Trapézové listové pružiny kombinují tradiční konstrukční principy s moderními výrobními postupy. Vhodné pro těžká nákladní vozidla.",
+      "specs": ["Délka do 2000 mm", "Šířka listu 45–120 mm", "Počet listů 2–12", "Maximální zatížení 200 kN"]
+    },
+    "parabolic": {
+      "name": "Listové pružiny parabolické",
+      "desc": "Moderní lehké řešení s optimálním výkonem. Snížená hmotnost při zachování maximální nosnosti.",
+      "detail": "Parabolické listové pružiny představují moderní přístup k odpružení. Díky optimalizovanému průřezu dosahují nižší hmotnosti při stejné nosnosti.",
+      "specs": ["Délka do 2200 mm", "Šířka listu 60–120 mm", "Počet listů 1–5", "Úspora hmotnosti až 40%"]
+    },
+    "learnMore": "Více informací",
+    "specifications": "Technické parametry",
+    "contactSales": "Poptávka"
+  },
+  "industries": {
+    "title": "Průmyslová odvětví",
+    "subtitle": "Naše pružiny slouží v nejnáročnějších podmínkách",
+    "automotive": {
+      "name": "Automobilový průmysl",
+      "desc": "Dodáváme pružiny pro osobní i nákladní automobily předním výrobcům a jejich dodavatelům."
+    },
+    "railway": {
+      "name": "Železniční průmysl",
+      "desc": "Specializujeme se na pružiny pro kolejová vozidla — lokomotivy, vagóny a tramvaje."
+    },
+    "industrial": {
+      "name": "Ostatní průmysl",
+      "desc": "Vyrábíme pružiny pro zemědělskou techniku, průmyslové stroje a další aplikace."
+    }
+  },
+  "about": {
+    "title": "O společnosti",
+    "subtitle": "Sedm desetiletí preciznosti",
+    "mission": "Umíme vyrobit dobré pružiny, na kterých spočívá bezpečí cestujících a tíha nákladů",
+    "historyTitle": "Naše historie",
+    "historyText": "Společnost HŽP a.s. byla založena v roce 1951 v Prostějově jako specializovaný výrobce pružin pro průmysl. Za více než 70 let existence jsme se stali uznávaným dodavatelem pro automobilový a železniční průmysl v celé Evropě.",
+    "history2": "Dnes zaměstnáváme 280 odborníků a ročně vyrobíme téměř 573 000 pružin. Naše výrobky najdete v kolejových vozidlech po celé Evropě i v automobilech předních světových značek.",
+    "visionTitle": "Vize",
+    "visionText": "Stát se předním evropským výrobcem pružin pro železniční průmysl při současném rozvoji kapacit v automobilovém průmyslu.",
+    "valuesTitle": "Naše hodnoty",
+    "values": [
+      { "title": "Kvalita", "desc": "Každá pružina prochází přísnou kontrolou kvality podle mezinárodních norem." },
+      { "title": "Inovace", "desc": "Investujeme do vývoje nových technologií a výrobních postupů." },
+      { "title": "Spolehlivost", "desc": "Naši zákazníci se na nás mohou spolehnout — dodáváme včas a v požadované kvalitě." },
+      { "title": "Udržitelnost", "desc": "Zodpovědný přístup k životnímu prostředí a efektivní využívání zdrojů." }
+    ],
+    "managementTitle": "Vedení společnosti",
+    "management": [
+      { "name": "Ing. Petr Vaněk, MBA", "role": "Generální ředitel" },
+      { "name": "Ing. Radek Páleník", "role": "Finanční ředitel" },
+      { "name": "Ing. Tomáš Grulich", "role": "Technický ředitel" },
+      { "name": "Ing. Stanislav Maslák, MBA", "role": "Obchodní ředitel" }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "subtitle": "Jsme tu pro vás",
+    "address": "Adresa",
+    "addressVal": "Dolní 3137/100, 796 01 Prostějov, Česká republika",
+    "phone": "Telefon",
+    "phoneVal": "+420 582 344 469",
+    "email": "E-mail",
+    "emailVal": "springs@hzp.cz",
+    "ico": "IČO",
+    "icoVal": "26955342",
+    "departments": "Kontakty oddělení",
+    "depts": [
+      { "name": "Obchod", "person": "Erik Nadymáček", "phone": "+420 582 312 783", "email": "erik.nadymacek@hzp.cz" },
+      { "name": "Technické oddělení", "person": "Pavel Nekoksa", "phone": "+420 582 312 754", "email": "pavel.nekoksa@hzp.cz" },
+      { "name": "Kvalita", "person": "Vojtěch Pešat", "phone": "+420 582 312 849", "email": "vojtech.pesat@hzp.cz" },
+      { "name": "Personální oddělení", "person": "Hana Horáková", "phone": "+420 582 312 375", "email": "hana.horakova@hzp.cz" }
+    ],
+    "formTitle": "Napište nám",
+    "formName": "Jméno a příjmení",
+    "formEmail": "E-mailová adresa",
+    "formCompany": "Název společnosti",
+    "formSubject": "Předmět",
+    "formMessage": "Zpráva",
+    "formSend": "Odeslat zprávu",
+    "formSuccess": "Zpráva odeslána. Ozve se vám nejpozději do 24 hodin.",
+    "required": "Povinné pole"
+  },
+  "career": {
+    "title": "Kariéra",
+    "subtitle": "Budujte svou kariéru s námi",
+    "intro": "Hledáme talentované a motivované lidi, kteří chtějí být součástí předního evropského výrobce pružin. Nabízíme stabilní zaměstnání, příjemné pracovní prostředí a příležitosti k růstu.",
+    "whyTitle": "Proč HŽP?",
+    "benefits": [
+      { "title": "Stabilita", "desc": "Více než 70 let na trhu. Stabilní zákazníci a jistota zaměstnání." },
+      { "title": "Rozvoj", "desc": "Investujeme do vzdělávání a profesního rozvoje svých zaměstnanců." },
+      { "title": "Odměňování", "desc": "Konkurenceschopné platy, prémie a benefity nad rámec zákona." },
+      { "title": "Tým", "desc": "Přátelský kolektiv 280 odborníků. Otevřená firemní kultura." },
+      { "title": "Lokalita", "desc": "Sídlíme v Prostějově — dostupné město s dobrou kvalitou života." },
+      { "title": "Technologie", "desc": "Moderní strojní park a výrobní technologie světových výrobců." }
+    ],
+    "openPositions": "Volné pozice",
+    "noPositions": "Momentálně nemáme žádné volné pozice. Zašlete nám životopis na hana.horakova@hzp.cz.",
+    "contactHR": "Kontakt HR",
+    "hrPerson": "Hana Horáková",
+    "hrPhone": "+420 582 312 375",
+    "hrEmail": "hana.horakova@hzp.cz",
+    "sendCV": "Zaslat životopis"
+  },
+  "footer": {
+    "tagline": "Výrobce pružin od roku 1951",
+    "quickLinks": "Rychlé odkazy",
+    "contactUs": "Kontakt",
+    "followUs": "Sledujte nás",
+    "rights": "Všechna práva vyhrazena.",
+    "privacy": "Ochrana osobních údajů",
+    "cookies": "Cookies"
+  },
+  "common": {
+    "readMore": "Více",
+    "contactUs": "Kontaktujte nás",
+    "learnMore": "Zjistit více",
+    "viewAll": "Zobrazit vše",
+    "back": "Zpět"
+  },
+  "meta": {
+    "products": "Šroubové pružiny, trapézové a parabolické listové pružiny pro železniční a automobilový průmysl. Výroba na míru s přesností certifikovanou dle mezinárodních norem.",
+    "about": "Poznejte HŽP a.s. — přes 70 let zkušeností ve výrobě pružin. 280 zaměstnanců, export do celé Evropy, sídlo v Prostějově.",
+    "contact": "Kontaktujte HŽP a.s. v Prostějově. Telefon, e-mail, adresa a přímé kontakty na obchodní, technické a personální oddělení.",
+    "career": "Přidejte se k týmu HŽP a.s. Nabízíme stabilní zaměstnání, konkurenceschopné platy a profesní rozvoj v předním evropském výrobci pružin."
+  }
+}

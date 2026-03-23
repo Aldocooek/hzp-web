@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "career": "Career",
+    "productsSlug": "products",
+    "aboutSlug": "about",
+    "contactSlug": "contact",
+    "careerSlug": "career"
+  },
+  "hero": {
+    "headline1": "Safety rides",
+    "headline2": "on our",
+    "headline3": "springs",
+    "subheadline": "— since 1951",
+    "sub": "Europe's leading spring manufacturer for railway and automotive industries since 1951",
+    "cta1": "View products",
+    "cta2": "Contact us"
+  },
+  "stats": {
+    "founded": "Year founded",
+    "springs": "Springs per year",
+    "employees": "Employees",
+    "years": "Years of experience",
+    "foundedVal": "1951",
+    "springsVal": "572,945",
+    "employeesVal": "280",
+    "yearsVal": "65+"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Precision engineering for every application",
+    "helical": {
+      "name": "Helical Springs",
+      "desc": "Hot-formed springs for railway and automotive industry. Maximum precision and durability for the most demanding applications.",
+      "detail": "Our helical springs are manufactured from the highest quality steels with strict adherence to all standards. Every spring undergoes thorough quality control.",
+      "specs": ["Wire diameter 12–80 mm", "Spring diameter up to 500 mm", "Height up to 1000 mm", "Maximum load 500 kN"]
+    },
+    "trapezoidal": {
+      "name": "Trapezoidal Leaf Springs",
+      "desc": "Traditional design solution for commercial vehicles and trailers. Proven technology with long service life.",
+      "detail": "Trapezoidal leaf springs combine traditional design principles with modern manufacturing processes. Suitable for heavy commercial vehicles.",
+      "specs": ["Length up to 2000 mm", "Leaf width 45–120 mm", "Number of leaves 2–12", "Maximum load 200 kN"]
+    },
+    "parabolic": {
+      "name": "Parabolic Leaf Springs",
+      "desc": "Modern lightweight solution with optimal performance. Reduced weight while maintaining maximum load capacity.",
+      "detail": "Parabolic leaf springs represent a modern approach to suspension. Thanks to the optimized cross-section, they achieve lower weight with the same load capacity.",
+      "specs": ["Length up to 2200 mm", "Leaf width 60–120 mm", "Number of leaves 1–5", "Weight savings up to 40%"]
+    },
+    "learnMore": "Learn more",
+    "specifications": "Technical specifications",
+    "contactSales": "Request a quote"
+  },
+  "industries": {
+    "title": "Industries",
+    "subtitle": "Our springs perform in the most demanding conditions",
+    "automotive": {
+      "name": "Automotive",
+      "desc": "We supply springs for passenger and commercial vehicles to leading manufacturers and their suppliers."
+    },
+    "railway": {
+      "name": "Railway",
+      "desc": "We specialize in springs for rail vehicles — locomotives, wagons and trams."
+    },
+    "industrial": {
+      "name": "Industrial",
+      "desc": "We manufacture springs for agricultural machinery, industrial machines and other applications."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Seven decades of precision",
+    "mission": "We know how to make quality springs on which the safety of passengers and the weight of cargo depend",
+    "historyTitle": "Our History",
+    "historyText": "HŽP a.s. was founded in 1951 in Prostějov as a specialized spring manufacturer for industry. Over more than 70 years, we have become a recognized supplier to the automotive and railway industries throughout Europe.",
+    "history2": "Today we employ 280 specialists and manufacture nearly 573,000 springs per year. Our products can be found in rail vehicles throughout Europe and in automobiles from leading global brands.",
+    "visionTitle": "Vision",
+    "visionText": "To become the leading European spring manufacturer for the railway industry while expanding capacity in the automotive sector.",
+    "valuesTitle": "Our Values",
+    "values": [
+      { "title": "Quality", "desc": "Every spring undergoes strict quality control according to international standards." },
+      { "title": "Innovation", "desc": "We invest in the development of new technologies and manufacturing processes." },
+      { "title": "Reliability", "desc": "Our customers can count on us — we deliver on time and to the required quality." },
+      { "title": "Sustainability", "desc": "Responsible approach to the environment and efficient use of resources." }
+    ],
+    "managementTitle": "Management",
+    "management": [
+      { "name": "Ing. Petr Vaněk, MBA", "role": "Chief Executive Officer" },
+      { "name": "Ing. Radek Páleník", "role": "Chief Financial Officer" },
+      { "name": "Ing. Tomáš Grulich", "role": "Chief Technical Officer" },
+      { "name": "Ing. Stanislav Maslák, MBA", "role": "Sales Director" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here for you",
+    "address": "Address",
+    "addressVal": "Dolní 3137/100, 796 01 Prostějov, Czech Republic",
+    "phone": "Phone",
+    "phoneVal": "+420 582 344 469",
+    "email": "Email",
+    "emailVal": "springs@hzp.cz",
+    "ico": "Company ID",
+    "icoVal": "26955342",
+    "departments": "Department contacts",
+    "depts": [
+      { "name": "Sales", "person": "Erik Nadymáček", "phone": "+420 582 312 783", "email": "erik.nadymacek@hzp.cz" },
+      { "name": "Technical Department", "person": "Pavel Nekoksa", "phone": "+420 582 312 754", "email": "pavel.nekoksa@hzp.cz" },
+      { "name": "Quality", "person": "Vojtěch Pešat", "phone": "+420 582 312 849", "email": "vojtech.pesat@hzp.cz" },
+      { "name": "Human Resources", "person": "Hana Horáková", "phone": "+420 582 312 375", "email": "hana.horakova@hzp.cz" }
+    ],
+    "formTitle": "Send us a message",
+    "formName": "Full name",
+    "formEmail": "Email address",
+    "formCompany": "Company name",
+    "formSubject": "Subject",
+    "formMessage": "Message",
+    "formSend": "Send message",
+    "formSuccess": "Message sent. We'll get back to you within 24 hours.",
+    "required": "Required field"
+  },
+  "career": {
+    "title": "Career",
+    "subtitle": "Build your career with us",
+    "intro": "We are looking for talented and motivated people who want to be part of a leading European spring manufacturer. We offer stable employment, a pleasant work environment and opportunities for growth.",
+    "whyTitle": "Why HŽP?",
+    "benefits": [
+      { "title": "Stability", "desc": "Over 70 years in business. Stable customers and job security." },
+      { "title": "Development", "desc": "We invest in the education and professional development of our employees." },
+      { "title": "Compensation", "desc": "Competitive salaries, bonuses and benefits beyond statutory requirements." },
+      { "title": "Team", "desc": "A friendly team of 280 professionals. Open company culture." },
+      { "title": "Location", "desc": "Based in Prostějov — an accessible city with a good quality of life." },
+      { "title": "Technology", "desc": "Modern machinery and production technology from world-class manufacturers." }
+    ],
+    "openPositions": "Open positions",
+    "noPositions": "We currently have no open positions. Send us your CV at hana.horakova@hzp.cz.",
+    "contactHR": "HR Contact",
+    "hrPerson": "Hana Horáková",
+    "hrPhone": "+420 582 312 375",
+    "hrEmail": "hana.horakova@hzp.cz",
+    "sendCV": "Send CV"
+  },
+  "footer": {
+    "tagline": "Spring manufacturer since 1951",
+    "quickLinks": "Quick links",
+    "contactUs": "Contact",
+    "followUs": "Follow us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies"
+  },
+  "common": {
+    "readMore": "Read more",
+    "contactUs": "Contact us",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "back": "Back"
+  },
+  "meta": {
+    "products": "Helical springs, trapezoidal and parabolic leaf springs for railway and automotive industries. Custom manufacturing with precision certified to international standards.",
+    "about": "Discover HŽP a.s. — over 70 years of spring manufacturing expertise. 280 employees, EU-wide exports, headquartered in Prostějov, Czech Republic.",
+    "contact": "Contact HŽP a.s. in Prostějov. Phone, email, address and direct contacts for sales, technical and HR departments.",
+    "career": "Join the HŽP a.s. team. We offer stable employment, competitive salaries and professional development at a leading European spring manufacturer."
+  }
+}

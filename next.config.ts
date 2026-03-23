@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '1dyubvw4',
+    NEXT_PUBLIC_SANITY_DATASET: process.env.NEXT_PUBLIC_SANITY_DATASET || 'hzp',
+  },
   poweredByHeader: false,
   outputFileTracingRoot: path.join(__dirname),
   // Sanity studio packages use ESM with useEffectEvent not available in react-server.
